@@ -30,7 +30,7 @@
 					this.x = x, this.y = y;
 					this.neighbours = [];
 					this.previous = null;
-					this.isObstacle = Math.random() < 0.3;
+					this.isObstacle = Math.random() < 0.15;
 				}
 			}
 			
@@ -78,20 +78,20 @@
 						let t = board[arr][tile];
 						
 						ctx.fillStyle = t.isObstacle ? "black" : "white";
-						ctx.fillRect(t.x * 15 + 2, t.y * 15 + 2, 9, 9);
+						ctx.fillRect(t.x * 15 + 2, t.y * 15 + 2, 14, 14);
 					}
 				}
 				
 				for (let tile of closedSet)
 				{
 					ctx.fillStyle = "rgba(255, 0, 0, 1)";
-					ctx.fillRect(tile.x * 15 + 2, tile.y * 15 + 2, 9, 9);
+					ctx.fillRect(tile.x * 15 + 2, tile.y * 15 + 2, 14, 14);
 				}
 				
 				for (let tile of openSet)
 				{
 					ctx.fillStyle = "rgba(0, 255, 0, 1)";
-					ctx.fillRect(tile.x * 15 + 2, tile.y * 15 + 2, 9, 9);
+					ctx.fillRect(tile.x * 15 + 2, tile.y * 15 + 2, 14, 14);
 				}
 				
 				let temp = current;
@@ -106,7 +106,7 @@
 				for (let tile of path)
 				{
 					ctx.fillStyle = "rgba(0, 0, 255, 1)";
-					ctx.fillRect(tile.x * 15 + 2, tile.y * 15 + 2, 9, 9);
+					ctx.fillRect(tile.x * 15 + 2, tile.y * 15 + 2, 14, 14);
 				}
 			}
 			
