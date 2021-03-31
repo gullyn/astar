@@ -17,10 +17,10 @@
 			let closedSet = [];
 			let start, end, path = [], over = false;
 			let current, interval, paused = true;
-			let width = 100, height = 50;
+			let width = 50, height = 35;
 			
-			canvas.width = 10 * width;
-			canvas.height = 10 * height;
+			canvas.width = 15 * width;
+			canvas.height = 15 * height;
 			
 			class Spot
 			{
@@ -77,21 +77,21 @@
 					{
 						let t = board[arr][tile];
 						
-						ctx.fillStyle = t.isObstacle ? "white" : "black";
-						ctx.fillRect(t.x * 10 + 2, t.y * 10 + 2, 9, 9);
+						ctx.fillStyle = t.isObstacle ? "black" : "white";
+						ctx.fillRect(t.x * 15 + 2, t.y * 15 + 2, 9, 9);
 					}
 				}
 				
 				for (let tile of closedSet)
 				{
 					ctx.fillStyle = "rgba(255, 0, 0, 1)";
-					ctx.fillRect(tile.x * 10 + 2, tile.y * 10 + 2, 9, 9);
+					ctx.fillRect(tile.x * 15 + 2, tile.y * 15 + 2, 9, 9);
 				}
 				
 				for (let tile of openSet)
 				{
 					ctx.fillStyle = "rgba(0, 255, 0, 1)";
-					ctx.fillRect(tile.x * 10 + 2, tile.y * 10 + 2, 9, 9);
+					ctx.fillRect(tile.x * 15 + 2, tile.y * 15 + 2, 9, 9);
 				}
 				
 				let temp = current;
@@ -106,7 +106,7 @@
 				for (let tile of path)
 				{
 					ctx.fillStyle = "rgba(0, 0, 255, 1)";
-					ctx.fillRect(tile.x * 10 + 2, tile.y * 10 + 2, 9, 9);
+					ctx.fillRect(tile.x * 15 + 2, tile.y * 15 + 2, 9, 9);
 				}
 			}
 			
